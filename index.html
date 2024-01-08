@@ -11,24 +11,71 @@
     <!-- link stile -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    
-   
-        <label for="name"> Nome Cognome</label>
-        <input type="text" id="name">
-        <label for="km">Km da percorrere</label>
-        <input type="text" id="km">
-        <select id="mySelect">
-            <option value="minorenne"> under 18 </option>
-            <option value="standard">18 - 65</option>
-            <option value="over"> over 65 </option>
-        </select>
-        <button id="button" class="btn btn-secondary"> Genera </button>
+<body class="bg-danger ">
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="text-center text-uppercase text-light">Calcola il prezzo del tuo Biglietto</h1>
+        
+        <form id="form" class="bg-light p-3 rounded mb-5">
+            <div class="d-flex gap-5 mb-4 ">
 
-        <div id="risultato">
+                <div class="d-flex flex-column gap-3">
+                    <label for="name" class="text-danger fw-bold"> Nome Cognome</label>
+                    <input type="text" id="name" class="border border-danger rounded p-1 text-center">
+                </div>
+                <div class="d-flex flex-column gap-3">
+                    <label for="km" class="text-danger fw-bold">Km da percorrere</label>
+                    <input type="number" id="km" class="border border-danger rounded p-1 text-center ">
+                </div>
+                <div class="d-flex flex-column gap-3 ">
+                    <label for="mySelect" class="text-danger fw-bold">Fascia d'età</label>
+                    <select id="mySelect" class="border border-danger rounded p-1">
+                        <option value="minorenne"> Minorenne </option>
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="over"> Over 65 </option>
+                    </select>
+                </div>
+            </div>
+            
+            
+            
+            <button id="button" class="btn btn-secondary text-danger fw-bold "> Genera </button>
+            <button id="button" class="btn btn-secondary text-danger fw-bold "> Annulla </button>
+        </form>
+    
+
+        <h2 class="text-center text-uppercase text-light fs-1 ">Il tuo Biglietto</h2>
+        <div class="bg-light p-3 rounded d-none">
+            <h4 class="text-dark text-uppercase fs-4">dettaglio passeggeri</h4>
+            <div class="d-flex gap-4 align-items-center border border-secondary border-start-0 border-end-0">
+                <div class="bg-secondary p-3">
+                    <h4 class="text-dark text-uppercase fs-5">nome passeggero</h4>
+                    <span class="text-dark text-uppercase fw-bold fs-5" id="nomeCognome"></span>
+                </div>
+
+                <div>
+                    <h6 class="text-dark text-capitalize ">offerta</h6>
+                    <span id="biglietto"></span>
+                </div>
+
+                <div>
+                    <h6 class="text-dark text-capitalize ">carrozza</h6>
+                    <span id="carrozza"></span>
+                </div>
+
+                <div>
+                    <h6 class="text-dark text-capitalize ">codice CP</h6>
+                    <span id="codPostale"></span>
+                </div>
+
+                <div>
+                    <h6 class="text-dark text-capitalize ">costo biglietto</h6>
+                    <span id="risultato"></span>
+                </div>
+            </div>
 
         </div>
 
+    </div>    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./assets/javascript/main.js"></script>
